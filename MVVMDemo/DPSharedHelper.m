@@ -38,7 +38,7 @@
 }
 
 /*
- Represents a background task that others observers may be interested in.
+ Represents a background task that other observers may be interested in.
  */
 - (void)bump {
     [self setNumber:@([self.number integerValue] + 1)];

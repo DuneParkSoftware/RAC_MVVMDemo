@@ -54,20 +54,20 @@
 -(RACCommand *)resetCommand {
     if (!_resetCommand) {
         _resetCommand = [[RACCommand alloc] initWithEnabled:[self canResetSignal] signalBlock:^RACSignal *(id input) {
-            // Simulate an error if the the shared helper number is <= 10.
-            if ([DPSharedHelper.sharedHelper.number integerValue] <= 10) {
-                return [RACSignal error:[NSError errorWithDomain:@"RACCommand error" code:1 userInfo:nil]];
-            } else {
-                // Send the current shared helper number to the subscriber, then
-                // perform the reset and complete the command.
-                RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                // Simulate an error if the the shared helper number is <= 10.
+                if ([DPSharedHelper.sharedHelper.number integerValue] <= 10) {
+                    [subscriber sendError:[NSError errorWithDomain:@"RACCommand error" code:1 userInfo:nil]];
+                } else {
+                    // Send the current shared helper number to the subscriber, then
+                    // perform the reset and complete the command.
                     [subscriber sendNext:[DPSharedHelper.sharedHelper number]];
                     [DPSharedHelper.sharedHelper reset];
                     [subscriber sendCompleted];
-                    return nil;
-                }];
-                return signal;
-            }
+                }
+                return nil;
+            }];
+            return signal;
         }];
     }
     return _resetCommand;
