@@ -33,6 +33,9 @@
     return self;
 }
 
+/*
+ Represents a background task that others observers may be interested in.
+ */
 - (void)bump {
     [self setNumber:@([self.number integerValue] + 1)];
 
@@ -44,6 +47,10 @@
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
 
+            // NOTE -> We are switching to the main queue here. However, if we
+            // stayed on the background queue here, RAC observers could still
+            // be triggered so long as they include
+            // deliverOn:[RACScheduler mainScheduler]
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self bump];
             });

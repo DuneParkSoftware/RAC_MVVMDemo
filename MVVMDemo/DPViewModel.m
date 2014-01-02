@@ -23,7 +23,8 @@
 
     @weakify(self);
     [[self.didBecomeActiveSignal logAll] subscribeNext:^(id x) {
-        // NOTE -> capturing 'x' in this block will lead to a retain cycle.
+        // NOTE -> capturing 'x' in this block will lead to a retain cycle,
+        //         preventing this viewModel from being released.
         //         Use weak 'self' instead.
         @strongify(self);
 
@@ -35,12 +36,15 @@
                              }];
     }];
 
-    [[self.didBecomeInactiveSignal logAll] subscribeNext:^(id x){}];
+    [[self.didBecomeInactiveSignal logAll] subscribeNext:^(id x){
+        // Just for logging purposes.
+    }];
 
     return self;
 }
 
 -(void)dealloc {
+    // Make sure we get dealloc'd so that we don't leak!
     NSLog(@"viewmodel dealloc -> %p", self);
 }
 

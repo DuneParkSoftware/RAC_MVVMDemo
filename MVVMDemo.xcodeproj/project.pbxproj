@@ -126,15 +126,15 @@
 			children = (
 				7140CE60187548A00048E1E3 /* DPAppDelegate.h */,
 				7140CE61187548A00048E1E3 /* DPAppDelegate.m */,
-				7140CE63187548A00048E1E3 /* Main.storyboard */,
-				7140CE66187548A00048E1E3 /* DPViewController.h */,
-				7140CE67187548A00048E1E3 /* DPViewController.m */,
-				7140CE69187548A00048E1E3 /* Images.xcassets */,
-				7140CE58187548A00048E1E3 /* Supporting Files */,
-				71C8F457187549FD00D6ECBE /* DPViewModel.h */,
-				71C8F458187549FD00D6ECBE /* DPViewModel.m */,
 				71CBEF9718755673003FD475 /* DPSharedHelper.h */,
 				71CBEF9818755674003FD475 /* DPSharedHelper.m */,
+				7140CE66187548A00048E1E3 /* DPViewController.h */,
+				7140CE67187548A00048E1E3 /* DPViewController.m */,
+				71C8F457187549FD00D6ECBE /* DPViewModel.h */,
+				71C8F458187549FD00D6ECBE /* DPViewModel.m */,
+				7140CE69187548A00048E1E3 /* Images.xcassets */,
+				7140CE63187548A00048E1E3 /* Main.storyboard */,
+				7140CE58187548A00048E1E3 /* Supporting Files */,
 			);
 			path = MVVMDemo;
 			sourceTree = "<group>";
