@@ -20,4 +20,6 @@
 
 + (instancetype)sharedHelper;
 
+- (void)reset;
+
 @end

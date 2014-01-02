@@ -11,6 +11,7 @@
 
 @interface DPViewModel ()
 @property (strong, nonatomic) NSString *string;
+@property (strong, nonatomic) RACCommand *resetCommand;
 @end
 
 @implementation DPViewModel
@@ -41,6 +42,35 @@
     }];
 
     return self;
+}
+
+- (RACSignal *)canResetSignal {
+    // We cannot reset the number until it is > 5.
+    return [RACObserve(DPSharedHelper.sharedHelper, number) map:^id(id value) {
+        return @([value integerValue] >= 5);
+    }];
+}
+
+-(RACCommand *)resetCommand {
+    if (!_resetCommand) {
+        _resetCommand = [[RACCommand alloc] initWithEnabled:[self canResetSignal] signalBlock:^RACSignal *(id input) {
+            // Simulate an error if the the shared helper number is <= 10.
+            if ([DPSharedHelper.sharedHelper.number integerValue] <= 10) {
+                return [RACSignal error:[NSError errorWithDomain:@"RACCommand error" code:1 userInfo:nil]];
+            } else {
+                // Send the current shared helper number to the subscriber, then
+                // perform the reset and complete the command.
+                RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                    [subscriber sendNext:[DPSharedHelper.sharedHelper number]];
+                    [DPSharedHelper.sharedHelper reset];
+                    [subscriber sendCompleted];
+                    return nil;
+                }];
+                return signal;
+            }
+        }];
+    }
+    return _resetCommand;
 }
 
 -(void)dealloc {

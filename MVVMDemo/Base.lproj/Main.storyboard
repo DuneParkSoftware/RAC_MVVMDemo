@@ -63,10 +63,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2BD-w8-poV">
+                                <rect key="frame" x="128" y="113" width="64" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VmU-FZ-4kY" firstAttribute="centerX" secondItem="2BD-w8-poV" secondAttribute="centerX" id="QcK-iZ-jhV"/>
                             <constraint firstItem="VmU-FZ-4kY" firstAttribute="top" secondItem="yeX-Ov-dgW" secondAttribute="bottom" constant="20" id="XMu-gu-HCi"/>
+                            <constraint firstItem="2BD-w8-poV" firstAttribute="top" secondItem="VmU-FZ-4kY" secondAttribute="bottom" constant="8" id="dJO-7K-ayK"/>
                             <constraint firstAttribute="centerX" secondItem="VmU-FZ-4kY" secondAttribute="centerX" id="osz-xX-Vzf"/>
                         </constraints>
                     </view>

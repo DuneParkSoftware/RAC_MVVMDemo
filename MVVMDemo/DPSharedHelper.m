@@ -33,6 +33,10 @@
     return self;
 }
 
+- (void)reset {
+    [self setNumber:@0];
+}
+
 /*
  Represents a background task that others observers may be interested in.
  */

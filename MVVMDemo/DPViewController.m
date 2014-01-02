@@ -32,6 +32,19 @@
     if (label) {
         RAC(label, text) = RACObserve(self.viewModel, string);
     }
+
+    [[[self.viewModel.resetCommand errors] logAll] subscribeNext:^(id error) {}];
+
+    [[self.viewModel.resetCommand executionSignals] subscribeNext:^(RACSignal *execution) {
+        [[execution logAll]
+         subscribeCompleted:^{
+         }];
+    }];
+
+    UIButton *resetButton = (UIButton *)[self.view viewWithTag:2];
+    if (resetButton) {
+        resetButton.rac_command = self.viewModel.resetCommand;
+    }
 }
 
 /*

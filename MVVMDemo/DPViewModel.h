@@ -9,5 +9,6 @@
 #import "RVMViewModel.h"
 
 @interface DPViewModel : RVMViewModel
-@property (readonly) NSString *string;
+@property (readonly, nonatomic) NSString *string;
+@property (readonly, nonatomic) RACCommand *resetCommand;
 @end
