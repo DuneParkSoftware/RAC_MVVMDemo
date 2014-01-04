@@ -2,7 +2,7 @@
 //  DPSharedHelper.m
 //  MVVMDemo
 //
-//  Created by Eric D. Baker on 02/01/14.
+//  Created by Eric D. Baker on 02/Jan/14.
 //  Copyright (c) 2014 DuneParkSoftware, LLC. All rights reserved.
 //
 

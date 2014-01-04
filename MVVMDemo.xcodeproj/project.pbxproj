@@ -21,9 +21,10 @@
 		7140CE72187548A00048E1E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7140CE51187548A00048E1E3 /* Foundation.framework */; };
 		7140CE73187548A00048E1E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7140CE55187548A00048E1E3 /* UIKit.framework */; };
 		7140CE7B187548A00048E1E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7140CE79187548A00048E1E3 /* InfoPlist.strings */; };
-		7140CE7D187548A00048E1E3 /* MVVMDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7140CE7C187548A00048E1E3 /* MVVMDemoTests.m */; };
+		71BD1A571877748400812E4F /* DPViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BD1A561877748400812E4F /* DPViewModelSpec.m */; };
 		71C8F459187549FD00D6ECBE /* DPViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C8F458187549FD00D6ECBE /* DPViewModel.m */; };
 		71CBEF9918755674003FD475 /* DPSharedHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CBEF9818755674003FD475 /* DPSharedHelper.m */; };
+		75D4ECB57525443FA6F2AA72 /* libPods-MVVMDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8030C573EE904C088A202457 /* libPods-MVVMDemoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +57,13 @@
 		7140CE70187548A00048E1E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		7140CE78187548A00048E1E3 /* MVVMDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MVVMDemoTests-Info.plist"; sourceTree = "<group>"; };
 		7140CE7A187548A00048E1E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7140CE7C187548A00048E1E3 /* MVVMDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMDemoTests.m; sourceTree = "<group>"; };
+		71BD1A561877748400812E4F /* DPViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPViewModelSpec.m; sourceTree = "<group>"; };
 		71C8F457187549FD00D6ECBE /* DPViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPViewModel.h; sourceTree = "<group>"; };
 		71C8F458187549FD00D6ECBE /* DPViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPViewModel.m; sourceTree = "<group>"; };
 		71CBEF9718755673003FD475 /* DPSharedHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPSharedHelper.h; sourceTree = "<group>"; };
 		71CBEF9818755674003FD475 /* DPSharedHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPSharedHelper.m; sourceTree = "<group>"; };
+		8030C573EE904C088A202457 /* libPods-MVVMDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MVVMDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9549EB82537B4A15AB05871C /* Pods-MVVMDemoTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMDemoTests.xcconfig"; path = "Pods/Pods-MVVMDemoTests.xcconfig"; sourceTree = "<group>"; };
 		BA6E287CFDBD45C69CD31D46 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +86,7 @@
 				7140CE71187548A00048E1E3 /* XCTest.framework in Frameworks */,
 				7140CE73187548A00048E1E3 /* UIKit.framework in Frameworks */,
 				7140CE72187548A00048E1E3 /* Foundation.framework in Frameworks */,
+				75D4ECB57525443FA6F2AA72 /* libPods-MVVMDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +101,7 @@
 				7140CE50187548A00048E1E3 /* Frameworks */,
 				7140CE4F187548A00048E1E3 /* Products */,
 				59E950615537497381F7180B /* Pods.xcconfig */,
+				9549EB82537B4A15AB05871C /* Pods-MVVMDemoTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +122,7 @@
 				7140CE55187548A00048E1E3 /* UIKit.framework */,
 				7140CE70187548A00048E1E3 /* XCTest.framework */,
 				BA6E287CFDBD45C69CD31D46 /* libPods.a */,
+				8030C573EE904C088A202457 /* libPods-MVVMDemoTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,8 +159,8 @@
 		7140CE76187548A00048E1E3 /* MVVMDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				7140CE7C187548A00048E1E3 /* MVVMDemoTests.m */,
 				7140CE77187548A00048E1E3 /* Supporting Files */,
+				71BD1A561877748400812E4F /* DPViewModelSpec.m */,
 			);
 			path = MVVMDemoTests;
 			sourceTree = "<group>";
@@ -194,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7140CE83187548A00048E1E3 /* Build configuration list for PBXNativeTarget "MVVMDemoTests" */;
 			buildPhases = (
+				CEEDE92416A545C09856DCAB /* Check Pods Manifest.lock */,
 				7140CE6B187548A00048E1E3 /* Sources */,
 				7140CE6C187548A00048E1E3 /* Frameworks */,
 				7140CE6D187548A00048E1E3 /* Resources */,
+				60822E38D6244A43B4C0A438 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,6 +302,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		60822E38D6244A43B4C0A438 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-MVVMDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEEDE92416A545C09856DCAB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -313,7 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7140CE7D187548A00048E1E3 /* MVVMDemoTests.m in Sources */,
+				71BD1A571877748400812E4F /* DPViewModelSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +495,7 @@
 		};
 		7140CE84187548A00048E1E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9549EB82537B4A15AB05871C /* Pods-MVVMDemoTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MVVMDemo.app/MVVMDemo";
@@ -480,6 +519,7 @@
 		};
 		7140CE85187548A00048E1E3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9549EB82537B4A15AB05871C /* Pods-MVVMDemoTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MVVMDemo.app/MVVMDemo";
