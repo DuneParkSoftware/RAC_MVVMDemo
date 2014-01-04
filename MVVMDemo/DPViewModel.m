@@ -63,7 +63,9 @@
 
 - (RACCommand *)resetCommand {
     if (!_resetCommand) {
+        @weakify(self);
         _resetCommand = [[RACCommand alloc] initWithEnabled:[self canResetSignal] signalBlock:^RACSignal *(id input) {
+            @strongify(self);
 
             RACSignal *executionSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> commandSubscriber) {
                 // Command execution has begun.

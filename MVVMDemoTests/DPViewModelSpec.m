@@ -14,10 +14,6 @@
 #import "DPViewModel.h"
 #import "DPSharedHelper.h"
 
-//BOOL(^blk)(DPViewModel *) = ^BOOL(DPViewModel *viewModel) {
-//    return NO;
-//};
-
 SpecBegin(DPViewModel)
 
 describe(@"DPViewModel", ^{
