@@ -41,12 +41,20 @@ describe(@"DPViewModel", ^{
     });
 
     it(@"should not enable the reset command when the helper number is < 5", ^{
-        NSNumber *enabled = blkTestResetCommandEnabledWithHelperNumber(@4);
+        __block NSNumber *enabled;
+        expect(^{
+            enabled = blkTestResetCommandEnabledWithHelperNumber(@4);
+        }).toNot.raise(NSInternalInconsistencyException);
+
         expect(enabled).will.beFalsy();
     });
 
     it(@"should enable the reset command when the helper number is >= 5", ^{
-        NSNumber *enabled = blkTestResetCommandEnabledWithHelperNumber(@5);
+        __block NSNumber *enabled;
+        expect(^{
+            enabled = blkTestResetCommandEnabledWithHelperNumber(@5);
+        }).toNot.raise(NSInternalInconsistencyException);
+
         expect(enabled).will.beTruthy();
     });
 
